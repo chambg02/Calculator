@@ -1,0 +1,32 @@
+.calculator {
+display: grid;
+width: 400px;
+grid-gap: 25px;
+height: 100px;
+}
+
+/* grid-row: (1,100px) was the only way to control height */
+.calculator-screen {
+grid-row: (1,100px);
+text-align: right;
+padding: 20px;
+font-size: 30px;
+}
+
+/* make grid for the buttons, calling rows first makes difference to display */
+.calculator-keys {
+display: grid;
+grid-template-rows: repeat(5, 80px);
+grid-template-columns: repeat(4,100px);
+grid-gap: 25px;
+}
+
+/*make clear and zero buttons span 3 columns*/
+.is-clear, .is-zero {
+grid-column: span 3;
+}
+
+/*make plus button span 2 rows*/
+.is-plus {
+grid-row: span 2;
+}
