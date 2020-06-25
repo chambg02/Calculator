@@ -9,28 +9,30 @@
 	</head>
 	<body>
 		<div class="calculator">
-			<input type="number" class="calculator-screen" value="5318008" disabled />
+						
+			<input type="text" class="calculator-screen" id="displayResult" placeholder="5138008" value="" disabled/>
 
 			<div class = "calculator-keys">
 				<button class="button is-clear" class="clear" value="C">C</button>
-				<button class="button" value="+">+</button>	
+				<button class="button" value="+" OnClick="displayResult.value += ' + '">+</button>	
 
-				<button class="button" value="7">7</button>	
-				<button class="button" value="8">8</button>
-				<button class="button" value="9">9</button>
-				<button class="button" value="*">&times</button>
+				<button class="button" value="7" OnClick="displayResult.value += '7'">7</button>	
+				<button class="button" value="8" OnClick="displayResult.value += '8'">8</button>
+				<button class="button" value="9" OnClick="displayResult.value += '9'">9</button>
+				<button class="button" value="*" OnClick="displayResult.value += ' &times '">&times</button>
 
-				<button class="button" value="4">4</button>
-				<button class="button" value="5">5</button>
-				<button class="button" value="6">6</button>
-				<button class="button" value="-">-</button>
+				<button class="button" value="4" OnClick="displayResult.value += '4'">4</button>
+				<button class="button" value="5" OnClick="displayResult.value += '5'">5</button>
+				<button class="button" value="6" OnClick="displayResult.value += '6'">6</button>
+				<button class="button" value="-" OnClick="displayResult.value += ' - '">-</button>
 
-				<button class="button" value="1">1</button>
-				<button class="button" value="2">2</button>
-				<button class="button" value="3">3</button>
-				<button class="button is-plus" value="=">=</button>
+				<button class="button" value="1" OnClick="displayResult.value += '1'">1</button>
+				<button class="button" value="2" OnClick="displayResult.value += '2'">2</button>
+				<button class="button" value="3" OnClick="displayResult.value += '3'">3</button>
+				<button class="button" value="/" OnClick="displayResult.value += ' / '">/</button>
 
-				<button class="button is-zero" value="0">0</button>
+				<button class="button is-zero" value="0" OnClick="displayResult.value += '0'">0</button>
+				<button class="button is-equal" value="=">=</button>
 
 			</div>
 		</div>
