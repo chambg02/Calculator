@@ -22,11 +22,11 @@ grid-gap: 25px;
 }
 
 /*make clear and zero buttons span 3 columns*/
-.is-clear, .is-zero {
+.is-clear {
 grid-column: span 3;
 }
 
 /*make plus button span 2 rows*/
-.is-plus {
-grid-row: span 2;
+.is-equal, .is-zero {
+grid-column: span 2;
 }
