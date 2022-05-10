@@ -12,40 +12,40 @@
     <div class="container">
         <!-- CONTAINER FOR DISPLAY -->
         <div class="displayContainer">
-            <div id="display">5138008</div>
+            <div id="display"></div>
         </div>
 
         <!-- CONTAINER FOR BUTTONS -->
         <div class="btnsContainer">
             <div class = "numbersContainer">
                 <div class = "numRow">
-                    <button class = "numBtn" id ="one">1</button>
-                    <button class = "numBtn" id ="two">2</button>
-                    <button class = "numBtn" id ="three">3</button>
+                    <button class = "numBtn" data-id="1" onclick = "select.append(1)" id ="one">1</button>
+                    <button class = "numBtn" data-id="2" onclick = "select.append(2)" id ="two">2</button>
+                    <button class = "numBtn" data-id="3" onclick = "select.append(3)" id ="three">3</button>
                 </div>
                 <div class = "numRow">
-                    <button class = "numBtn" id ="four">4</button>
-                    <button class = "numBtn" id ="five">5</button>
-                    <button class = "numBtn" id ="six">6</button>
+                    <button class = "numBtn" data-id="4" onclick = "select.append(4)" id ="four">4</button>
+                    <button class = "numBtn" data-id="5" onclick = "select.append(5)" id ="five">5</button>
+                    <button class = "numBtn" data-id="6" onclick = "select.append(6)" id ="six">6</button>
                 </div>
                 <div class = "numRow">
-                    <button class = "numBtn" id ="seven">7</button>
-                    <button class = "numBtn" id ="eight">8</button>
-                    <button class = "numBtn" id ="nine">9</button>
+                    <button class = "numBtn" data-id="7" onclick = "select.append(7)" id ="seven">7</button>
+                    <button class = "numBtn" data-id="8" onclick = "select.append(8)" id ="eight">8</button>
+                    <button class = "numBtn" data-id="9" onclick = "select.append(9)" id ="nine">9</button>
                 </div>
                 <div class = "numRow">
-                    <button class = "numBtn" id ="clear">AC</button>
-                    <button class = "numBtn" id ="zero">0</button>
-                    <button class = "numBtn" id ="backspace">⌫</button>
+                    <button class = "numBtn" data-id="AC" onclick = "select.append(1)" id ="clear">AC</button>
+                    <button class = "numBtn" data-id="0" onclick = "select.append(0)" id ="zero">0</button>
+                    <button class = "numBtn" data-id="BS" onclick = "select.append(1)" id ="backspace">⌫</button>
                 </div>               
             </div>
 
             <div class = "opsContainer">
                 <div class = "opsCol">
-                    <button class = "opsBtn" id ="div">÷</button>
-                    <button class = "opsBtn" id ="mult">x</button>
-                    <button class = "opsBtn" id ="plus">+</button>
-                    <button class = "opsBtn" id ="minus">-</button>
+                    <button class = "opsBtn" onclick = "select.append('÷')" id ="div">÷</button>
+                    <button class = "opsBtn" onclick = "select.append('x')" id ="mult">x</button>
+                    <button class = "opsBtn" onclick = "select.append('+')" id ="plus">+</button>
+                    <button class = "opsBtn" onclick = "select.append('-')" id ="minus">-</button>
                     <button class = "opsBtn" id ="equals">=</button>
                 </div>
         </div>
