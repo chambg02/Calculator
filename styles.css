@@ -1,0 +1,78 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 500px;
+    height: fit-content;
+    background-color: blueviolet;
+}
+
+.displayContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: aqua;
+    margin: 20px;
+}
+
+#display {
+    width: 95%;
+    height: 60px;
+    background-color: lightsalmon;
+}
+
+.btnsContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    background-color: aqua;
+    align-items: center;
+}
+
+.numbersContainer {
+    width: 80%;
+    height: fit-content;
+}
+
+.opsContainer {
+    width: 20%;
+    height: fit-content;
+}
+
+.opsCol {
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    align-items: center;
+    
+}
+
+.numRow {
+    display:flex;
+    margin: 2px;
+    justify-content: space-around;
+}
+
+.numBtn {
+    background-color: burlywood;
+    margin: 2px;
+    height: 60px;
+    width: 60px;
+    
+}
+
+.opsBtn {
+    background-color: burlywood;
+    margin: 2px;
+    height: 49px;
+    width: 49px;
+}

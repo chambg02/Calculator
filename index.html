@@ -10,12 +10,47 @@
 <body class="body">
     <div class="header">Calculator</div>
     <div class="container">
-        <div class="screenContainer">
-            <div class="screen">"5138008</div>
+        <!-- CONTAINER FOR DISPLAY -->
+        <div class="displayContainer">
+            <div id="display">5138008</div>
         </div>
-        <div class="buttonsContainer">
-            <button></button>
+
+        <!-- CONTAINER FOR BUTTONS -->
+        <div class="btnsContainer">
+            <div class = "numbersContainer">
+                <div class = "numRow">
+                    <button class = "numBtn" id ="one">1</button>
+                    <button class = "numBtn" id ="two">2</button>
+                    <button class = "numBtn" id ="three">3</button>
+                </div>
+                <div class = "numRow">
+                    <button class = "numBtn" id ="four">4</button>
+                    <button class = "numBtn" id ="five">5</button>
+                    <button class = "numBtn" id ="six">6</button>
+                </div>
+                <div class = "numRow">
+                    <button class = "numBtn" id ="seven">7</button>
+                    <button class = "numBtn" id ="eight">8</button>
+                    <button class = "numBtn" id ="nine">9</button>
+                </div>
+                <div class = "numRow">
+                    <button class = "numBtn" id ="clear">AC</button>
+                    <button class = "numBtn" id ="zero">0</button>
+                    <button class = "numBtn" id ="backspace">⌫</button>
+                </div>               
+            </div>
+
+            <div class = "opsContainer">
+                <div class = "opsCol">
+                    <button class = "opsBtn" id ="div">÷</button>
+                    <button class = "opsBtn" id ="mult">x</button>
+                    <button class = "opsBtn" id ="plus">+</button>
+                    <button class = "opsBtn" id ="minus">-</button>
+                    <button class = "opsBtn" id ="equals">=</button>
+                </div>
         </div>
+
+
     </div>
 
     <script src="javascript.js"></script>
