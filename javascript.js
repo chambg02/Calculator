@@ -19,7 +19,6 @@ let total = 0;
 function displayValue(x) {
     select.append(x);
     storeDisplayValue = storeDisplayValue + x;
-    console.log(storeDisplayValue);
     return storeDisplayValue;
 }
 
@@ -34,7 +33,16 @@ function equalPress(storeDisplayValue) {
     let newRow = document.createElement("div");
     select.appendChild(newRow);
     newRow.textContent = '= ' + `${total}`;
+    newRow.className = "equalsRow";
 }
+
+function clearDisplay() {
+    select.innerHTML = '';
+    storeDisplayValue = '';
+    let clearCell = document.querySelectorAll(".equalsRow");
+    select.removeChild(clearCell[0]);
+}
+
 
 // carry out operations
 function operate(numOne, numTwo, ope) {
