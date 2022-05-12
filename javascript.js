@@ -14,6 +14,7 @@ let numTwo = 0;
 let numbers = 0;
 let ope = "";
 let total = 0;
+let multiTotal = 0;
 
 //record button presses and displays/stores
 function displayValue(x) {
@@ -35,6 +36,38 @@ function equalPress(storeDisplayValue) {
     newRow.textContent = '= ' + `${total}`;
     newRow.className = "equalsRow";
 }
+
+//deal with multivalues (not yet implemented to button press but works
+function multiEquals(storeDisplayValue) {
+
+    multiNumbers = storeDisplayValue.split(/[*]|[+]|[-]|[\/]/);
+    multiOperators = storeDisplayValue.split(/[^-|+|\/|\*]/).filter(e => e);
+    
+    for (let i = 0; i < multiNumbers.length; i++) {
+        
+        numOne = parseInt(multiNumbers[0]);
+        numTwo = parseInt(multiNumbers[1]);
+        ope = multiOperators[0];
+        multiTotal = operate(parseInt(numOne), parseInt(numTwo), ope);
+        multiNumbers.splice(0, 2, multiTotal);
+        multiOperators.splice(0,1);
+    }
+    return multiTotal;
+}
+    /*
+    numOne = parseInt(numbers[0]);
+    numTwo = parseInt(numbers[1]);
+    ope = operators[0];
+
+    total = operate(parseInt(numOne), parseInt(numTwo), ope);
+
+    let newRow = document.createElement("div");
+    select.appendChild(newRow);
+    newRow.textContent = '= ' + `${total}`;
+    newRow.className = "equalsRow";
+    */
+
+
 
 function clearDisplay() {
     select.innerHTML = '';
