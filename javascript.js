@@ -20,10 +20,9 @@ let multiTotal = 0;
 function displayValue(x) {
     select.append(x);
     storeDisplayValue = storeDisplayValue + x;
-    return storeDisplayValue;
 }
 
-//analyses/splits stored data and runs through operate function
+/*
 function equalPress(storeDisplayValue) {
     numbers = storeDisplayValue.split(/[*]|[+]|[-]|[\/]/);
     operators = storeDisplayValue.split(/[^-|+|\/|\*]/).filter(e => e);
@@ -37,7 +36,6 @@ function equalPress(storeDisplayValue) {
     newRow.className = "equalsRow";
 }
 
-//deal with multivalues (not yet implemented to button press but works
 function multiEquals(storeDisplayValue) {
 
     multiNumbers = storeDisplayValue.split(/[*]|[+]|[-]|[\/]/);
@@ -54,6 +52,47 @@ function multiEquals(storeDisplayValue) {
     }
     return multiTotal;
 }
+*/
+
+//deal with multivalues (not yet implemented to button press but works
+function multiEqualsPrior(storeDisplayValue) {
+
+    multiNumbers = storeDisplayValue.split(/[*]|[+]|[-]|[\/]/);
+    multiOperators = storeDisplayValue.split(/[^-|+|\/|\*]/).filter(e => e);
+    
+    for (let i = 0; i < multiNumbers.length + 1; i++) {
+        if (multiOperators.includes("*")) {
+            let indexMult = multiOperators.indexOf("*");
+            numOne = parseInt(multiNumbers[indexMult]);
+            numTwo = parseInt(multiNumbers[indexMult + 1]);
+            ope = multiOperators[indexMult];
+            multiTotal = operate(parseInt(numOne), parseInt(numTwo), ope);
+            multiNumbers.splice(indexMult, 2, multiTotal);
+            multiOperators.splice(indexMult,1);
+        } else if (multiOperators.includes("/")) {
+            let indexMult = multiOperators.indexOf("/");
+            numOne = parseInt(multiNumbers[indexMult]);
+            numTwo = parseInt(multiNumbers[indexMult + 1]);
+            ope = multiOperators[indexMult];
+            multiTotal = operate(parseInt(numOne), parseInt(numTwo), ope);
+            multiNumbers.splice(indexMult, 2, multiTotal);
+            multiOperators.splice(indexMult,1);
+        } else if (multiOperators.includes("+" || "-")) {
+            numOne = parseInt(multiNumbers[0]);
+            numTwo = parseInt(multiNumbers[1]);
+            ope = multiOperators[0];
+            multiTotal = operate(parseInt(numOne), parseInt(numTwo), ope);
+            multiNumbers.splice(0, 2, multiTotal);
+            multiOperators.splice(0,1);
+        }
+    }
+    let newRow = document.createElement("div");
+    select.appendChild(newRow);
+    newRow.textContent = '= ' + `${multiTotal}`;
+    newRow.className = "equalsRow";
+}
+
+
     /*
     numOne = parseInt(numbers[0]);
     numTwo = parseInt(numbers[1]);
@@ -67,15 +106,12 @@ function multiEquals(storeDisplayValue) {
     newRow.className = "equalsRow";
     */
 
-
-
 function clearDisplay() {
     select.innerHTML = '';
     storeDisplayValue = '';
     let clearCell = document.querySelectorAll(".equalsRow");
     select.removeChild(clearCell[0]);
 }
-
 
 // carry out operations
 function operate(numOne, numTwo, ope) {
